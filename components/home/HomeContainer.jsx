@@ -29,6 +29,7 @@ class HomeContainer extends Component {
             isLoaded: true,
             users: _res.data,
             un_sorted: [..._res.data],
+            value: "none",
           });
         },
         (error) => {
@@ -90,15 +91,16 @@ class HomeContainer extends Component {
         this.setState({
           users: [...sorted],
           isLoaded: true,
+          value: action,
         });
       }
     );
   };
 
   render() {
-    const { isLoaded, users, un_sorted } = this.state;
+    const { isLoaded, users, un_sorted, value } = this.state;
     const { router } = this.props;
-    console.log("this.state", isLoaded, users, un_sorted);
+    console.log("this.state", isLoaded, users, un_sorted, value);
     if (!isLoaded) {
       return (
         <Container>
@@ -123,18 +125,23 @@ class HomeContainer extends Component {
                 <Row>
                   <Col
                     xs={6}
+                    sm={5}
                     className="d-flex justify-content-center align-items-center"
                   >
                     <strong>Sort By</strong>
                   </Col>
-                  <Col xs={6}>
+                  <Col xs={6} sm={5}>
                     <Dropdown
                       onSelect={(e, v) => {
                         this.onSortBy(e);
                       }}
                     >
-                      <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                        Sort By
+                      <Dropdown.Toggle
+                        variant="primary"
+                        id="dropdown-basic"
+                        style={{ width: "106px" }}
+                      >
+                        {value.replace("_", " ")}
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu>
