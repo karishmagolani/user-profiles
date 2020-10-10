@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
-import HomeContainer from "../../components/home/HomeContainer";
+// import HomeContainer from "../../components/home/HomeContainer";
 import { withRouter } from "next/router";
 import ProfileContainer from "../../components/profile/ProfileContainer";
 
