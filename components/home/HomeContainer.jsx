@@ -122,12 +122,12 @@ class HomeContainer extends Component {
               <Col sm={{ offset: 8 }} className="mb-3">
                 <Row>
                   <Col
-                    sm={6}
+                    xs={6}
                     className="d-flex justify-content-center align-items-center"
                   >
                     <strong>Sort By</strong>
                   </Col>
-                  <Col sm={6}>
+                  <Col xs={6}>
                     <Dropdown
                       onSelect={(e, v) => {
                         this.onSortBy(e);
@@ -154,8 +154,10 @@ class HomeContainer extends Component {
           </Col>
 
           {users.map((user, index) => (
-            <div
-              className="col-sm-4 d-flex flex-column justify-content-center align-items-center"
+            <Col
+              //   xs={6}
+              sm={4}
+              className="d-flex flex-column justify-content-center align-items-center"
               style={{ marginBottom: "35px" }}
               onClick={() => router.push(`/profile/${user.id}`)}
               key={index}
@@ -172,7 +174,7 @@ class HomeContainer extends Component {
                   </h5>
                 </div>
               </div>
-            </div>
+            </Col>
           ))}
         </div>
       </Container>
