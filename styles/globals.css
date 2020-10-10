@@ -11,6 +11,46 @@ a {
   text-decoration: none;
 }
 
+.spinner-border-xl {
+  display: inline-block;
+  width: 6rem !important;
+  height: 6rem !important;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+  animation: spinner-border 0.75s linear infinite;
+}
+
 * {
   box-sizing: border-box;
+}
+.mob-mb-xl {
+  margin-bottom: 20px !important;
+}
+.card.user {
+  width: 24rem;
+}
+.page-transition-enter {
+  opacity: 0;
+}
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.page-transition-exit {
+  opacity: 1;
+}
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+@media (max-width: 576px) {
+  .mob-mb-xl {
+    margin-bottom: 40px !important;
+  }
+  .card.user {
+    width: 14rem;
+  }
 }
